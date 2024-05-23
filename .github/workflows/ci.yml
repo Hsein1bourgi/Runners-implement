@@ -1,20 +1,21 @@
 name: CI
+
 on: [push, pull_request]
 
-jobs: 
+jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - name: Checkout repositry
+    - name: Checkout repository
       uses: actions/checkout@v2
 
     - name: Set up Node.js
       uses: actions/setup-node@v2
-      with: 
+      with:
         node-version: '14'
 
-    - name: Install dependencies 
+    - name: Install dependencies
       run: npm install
 
     - name: Run tests
